@@ -1,0 +1,36 @@
+{
+    "books": [
+        {
+            "id":"1",
+            "title":"Sineklerin Tanrısı",
+            "author": "William Golding",
+            "isbn":"",
+            "publisher":"İş Bankası Yayınları",
+            "categoryId":"1",
+            "isRead":false
+        },
+        {
+            "id":"2",
+            "title": "Denemeler",
+            "author": "Montaigne",
+            "isbn":"111111111111",
+            "publisher": "Can Yayınları",
+            "isRead": true,
+            "categoryId":"3"
+        }
+    ],
+    "categories":[
+        {
+            "id":"1",
+            "name":"Roman"
+        },
+        {
+            "id":"2",
+            "name":"Hikaye"
+        },
+        {
+            "id":"3",
+            "name":"Deneme"
+        }
+    ]
+}

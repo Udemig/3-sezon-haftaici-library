@@ -1,0 +1,21 @@
+Tanım: 
+    -> Uygulama kişisel kitaplığı dijital ortama taşıma üzerine yapılacak 
+    bir çalışmadır.
+
+Dependencies:
+    -> axios
+    -> React Router Dom 6
+    -> Redux, React-Redux
+    -> json-server
+
+İş Sırası:
+    -> json-server yapısını kur (foreign key) +
+    -> Redux!!!! yapısının kurulması
+        - Store'a eklenecek stateler: 
+            1. Books +
+            2. Categories +
+        - React uygulamasını store ile provide et (projene reduxı tanıt)+
+    -> Router yapısını kur +
+    -> UI Kütüphanesi (Bootstrap) +
+    -> Redux içerisindeki store'u doldur +
+    -> Kitapları Listele (Ayrı bir component)
