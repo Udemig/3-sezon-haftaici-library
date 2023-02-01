@@ -4,10 +4,17 @@ import {Link} from "react-router-dom"
 
 import { useSelector } from "react-redux";
 
+import check from "../assets/images/check.png"
+
 const ListBooks = () => {
   const { booksState, categoriesState } = useSelector((state) => state);
+  console.log(booksState);
+  console.log(categoriesState);
   return (
     <div className="container my-5">
+      <div className="d-flex justify-content-end my-3">
+        <Link to={"/add-book"} className="btn btn-primary">Yeni Kitap Ekle</Link> 
+      </div>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -25,7 +32,7 @@ const ListBooks = () => {
             );
             return (
               <tr key={book.id}>
-                <th>{index + 1}</th>
+                <th>{index + 1}{book.isRead === true && <img style={{width:"20px"}} src={check} />}</th>
                 <td>{book.title}</td>
                 <td>{book.author}</td>
                 <td>{myCategory.name}</td>

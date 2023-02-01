@@ -1,36 +1,54 @@
 {
-    "books": [
-        {
-            "id":"1",
-            "title":"Sineklerin Tanrısı",
-            "author": "William Golding",
-            "isbn":"",
-            "publisher":"İş Bankası Yayınları",
-            "categoryId":"1",
-            "isRead":false
-        },
-        {
-            "id":"2",
-            "title": "Denemeler",
-            "author": "Montaigne",
-            "isbn":"111111111111",
-            "publisher": "Can Yayınları",
-            "isRead": true,
-            "categoryId":"3"
-        }
-    ],
-    "categories":[
-        {
-            "id":"1",
-            "name":"Roman"
-        },
-        {
-            "id":"2",
-            "name":"Hikaye"
-        },
-        {
-            "id":"3",
-            "name":"Deneme"
-        }
-    ]
+  "books": [
+    {
+      "id": "1",
+      "title": "Sineklerin Tanrısı",
+      "author": "William Golding",
+      "isbn": "",
+      "publisher": "İş Bankası Yayınları",
+      "categoryId": "1",
+      "isRead": false
+    },
+    {
+      "id": "2",
+      "title": "Denemeler",
+      "author": "Montaigne",
+      "isbn": "111111111111",
+      "publisher": "Can Yayınları",
+      "isRead": true,
+      "categoryId": "3"
+    },
+    {
+      "id": "1675196617428",
+      "title": "deneme",
+      "author": "deneme",
+      "isbn": "11111111111",
+      "publisher": "deneme",
+      "categoryId": "2",
+      "isRead": true
+    },
+    {
+      "id": "1675198136490",
+      "title": "deneme1",
+      "author": "deneme1",
+      "isbn": "22222222222",
+      "publisher": "deneme1",
+      "categoryId": "2",
+      "isRead": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Roman"
+    },
+    {
+      "id": "2",
+      "name": "Hikaye"
+    },
+    {
+      "id": "3",
+      "name": "Deneme"
+    }
+  ]
 }

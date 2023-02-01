@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 import Home from "./pages/Home";
+import AddBook from "./pages/AddBook";
 
 import axios from "axios";
 import actionTypes from "./redux/actions/actionTypes";
+import Error from "./pages/Error";
 
 function App() {
   const dispatch = useDispatch();
+  const {booksState,categoriesState}=useSelector(state=>state)
 
   useEffect(() => {
     //fetch books
@@ -46,10 +49,16 @@ function App() {
       });
   }, []);
 
+  if(booksState.success === false || categoriesState.success === false){
+    return <h1>Loading...</h1>
+  }
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/add-book" element={<AddBook />} />
+
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
