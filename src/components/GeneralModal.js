@@ -1,6 +1,13 @@
 import React from "react";
 
-const GeneralModal = ({ title, content, buttonText, buttonOnClick }) => {
+const GeneralModal = ({
+  title,
+  content,
+  buttonText,
+  buttonOnClick,
+  secondaryBtnText = "",
+  secondaryBtnOnClick = () => {},
+}) => {
   return (
     <div
       style={{
@@ -11,9 +18,9 @@ const GeneralModal = ({ title, content, buttonText, buttonOnClick }) => {
         zIndex: 100,
         top: 0,
         left: 0,
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}>
       <div
         style={{
@@ -25,7 +32,16 @@ const GeneralModal = ({ title, content, buttonText, buttonOnClick }) => {
         <h1 className="text-center">{title}</h1>
         <p className="text-center">{content}</p>
         <div className="d-flex justify-content-center">
-          <button className="btn btn-danger" onClick={buttonOnClick}>{buttonText}</button>
+          {secondaryBtnText !== "" && (
+            <button
+              className="btn btn-outline-primary mx-3"
+              onClick={secondaryBtnOnClick}>
+              {secondaryBtnText}
+            </button>
+          )}
+          <button className="btn btn-danger" onClick={buttonOnClick}>
+            {buttonText}
+          </button>
         </div>
       </div>
     </div>

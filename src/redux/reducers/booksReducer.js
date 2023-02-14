@@ -36,6 +36,12 @@ const booksReducer=(state=initialState,action)=>{
                 ...state,
                 books: [...state.books,action.payload]
             }
+        case actionTypes.bookTypes.DELETE_BOOK:
+            let filteredBooks=state.books.filter(item => item.id !== action.payload)
+            return{
+                ...state,
+                books: filteredBooks
+            }
         default:
             return state
     }
