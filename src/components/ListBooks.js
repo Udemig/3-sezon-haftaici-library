@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import actionTypes from "../redux/actions/actionTypes";
 
 import check from "../assets/images/check.png";
@@ -13,19 +13,18 @@ import api from "../api/api";
 import urls from "../api/urls";
 
 const ListBooks = () => {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const { booksState, categoriesState } = useSelector((state) => state);
   const [showModal, setShowModal] = useState(false);
-  const [willDeleteBook,setWillDeleteBook]=useState("")
-  const deleteBook=(id)=>{
-    api.delete(`${urls.books}/${id}`)
-    .then(res=>{
-      dispatch({type:actionTypes.bookTypes.DELETE_BOOK,payload:id})
-      setShowModal(false)
-    })
-  }
+  const [willDeleteBook, setWillDeleteBook] = useState("");
+  const deleteBook = (id) => {
+    api.delete(`${urls.books}/${id}`).then((res) => {
+      dispatch({ type: actionTypes.bookTypes.DELETE_BOOK, payload: id });
+      setShowModal(false);
+    });
+  };
   return (
-    <div className="container my-5">
+    <div className=" my-5">
       <div className="d-flex justify-content-end my-3">
         <Link to={"/add-book"} className="btn btn-primary">
           Yeni Kitap Ekle
@@ -59,10 +58,19 @@ const ListBooks = () => {
                 <td>{myCategory.name}</td>
                 <td>
                   <Link to={`/book-detail/${book.id}`}>Detay</Link>
-                  <button onClick={()=>{
-                    setShowModal(true)
-                    setWillDeleteBook(book.id)
-                  }} className="btn btn-sm btn-danger">Sil</button>
+                  <button
+                    onClick={() => {
+                      setShowModal(true);
+                      setWillDeleteBook(book.id);
+                    }}
+                    className="btn btn-sm btn-danger">
+                    Sil
+                  </button>
+                  <Link
+                    to={`/edit-book/${book.id}`}
+                    className="btn btn-sm btn-secondary">
+                    Güncelle
+                  </Link>
                 </td>
               </tr>
             );
@@ -74,9 +82,9 @@ const ListBooks = () => {
           title={"Kitap Silinecek"}
           content="Kitabı silmek istediğinize emin misiniz?"
           secondaryBtnText="Vazgeç"
-          secondaryBtnOnClick={()=>setShowModal(false)}
+          secondaryBtnOnClick={() => setShowModal(false)}
           buttonText={"Sil"}
-          buttonOnClick={()=>deleteBook(willDeleteBook)}
+          buttonOnClick={() => deleteBook(willDeleteBook)}
         />
       )}
     </div>
