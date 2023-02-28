@@ -19,22 +19,13 @@
       "categoryId": "3"
     },
     {
-      "id": "1675196617428",
-      "title": "deneme",
-      "author": "deneme",
-      "isbn": "11111111111",
-      "publisher": "deneme",
-      "categoryId": "2",
-      "isRead": true
-    },
-    {
-      "id": "1677012493864",
-      "title": "fds",
-      "author": "dsfsd",
-      "isbn": "11111111111",
-      "publisher": "sdfsd",
-      "categoryId": "2",
-      "isRead": true
+      "id": "1677617803555",
+      "title": "deneme deneme deneme DENEME",
+      "author": "DeNeME",
+      "isbn": "13123123",
+      "publisher": "adasd",
+      "categoryId": "1",
+      "isRead": false
     }
   ],
   "categories": [
@@ -43,12 +34,12 @@
       "name": "Roman"
     },
     {
-      "id": "2",
-      "name": "Hikaye"
-    },
-    {
       "id": "3",
       "name": "Deneme"
+    },
+    {
+      "id": "1677614954222",
+      "name": "bilim kurgu"
     }
   ]
 }

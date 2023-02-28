@@ -12,6 +12,8 @@ import GeneralModal from "./GeneralModal";
 import api from "../api/api";
 import urls from "../api/urls";
 
+import { upperFirstLetters } from "../utils/functions";
+
 const ListBooks = () => {
   const dispatch = useDispatch();
   const { booksState, categoriesState } = useSelector((state) => state);
@@ -53,8 +55,8 @@ const ListBooks = () => {
                     <img style={{ width: "20px" }} src={check} />
                   )}
                 </th>
-                <td>{book.title}</td>
-                <td>{book.author}</td>
+                <td>{upperFirstLetters(book.title)}</td>
+                <td>{upperFirstLetters(book.author)}</td>
                 <td>{myCategory.name}</td>
                 <td>
                   <Link to={`/book-detail/${book.id}`}>Detay</Link>
