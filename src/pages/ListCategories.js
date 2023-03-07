@@ -82,9 +82,9 @@ const ListCategories = () => {
                         className="btn btn-sm btn-danger">
                         Sil
                       </button>
-                      <button className="btn btn-sm btn-secondary">
+                      <Link to={`/edit-category/${category.id}`} className="btn btn-sm btn-secondary">
                         Güncelle
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}

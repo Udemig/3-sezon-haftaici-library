@@ -42,6 +42,19 @@ const categoriesReducer=(state=initialState,action)=>{
                 ...state,
                 categories: filteredCategories
             }
+        case actionTypes.categoryTypes.EDIT_CATEGORY:
+            let newArray=[]
+            for(let i=0;i<state.categories.length;i++){
+                if(state.categories[i].id === action.payload.id){
+                    newArray.push(action.payload)
+                }else{
+                   newArray.push(state.categories[i]) 
+                }
+            }
+            return{
+                ...state,
+                categories: newArray
+            }
         default:
             return state
     }
